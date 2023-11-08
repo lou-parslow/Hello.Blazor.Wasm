@@ -20,7 +20,9 @@ task :build do
   #FileUtils.cp_r "dist/.", "docs"
   #run "cp -r dist/wwwroot/* docs"
 
+  # for github pages, a .nojekyll file is required to prevent github from ignoring files starting with an underscore
+  File.open("docs/.nojekyll", "w") {}
   # set base path to /Hello.Blazor.Wasm in docs/index.html
-  
+
   #<base href="https://lou-parslow.github.io/Hello.Blazor.Wasm/" />
 end
