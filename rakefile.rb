@@ -19,4 +19,8 @@ task :build do
   FileUtils.cp_r "dist/wwwroot/.", "docs"
   #FileUtils.cp_r "dist/.", "docs"
   #run "cp -r dist/wwwroot/* docs"
+
+  # set base path to /Hello.Blazor.Wasm in docs/index.html
+  
+  #<base href="https://lou-parslow.github.io/Hello.Blazor.Wasm/" />
 end

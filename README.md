@@ -73,3 +73,10 @@ Here are the detailed steps you would typically follow:
    - Once GitHub Pages has finished building your site, you can navigate to `https://<username>.github.io/<repository-name>/` to see your live Blazor app.
 
 Remember that GitHub Pages serves static content and won't be able to handle server-side Blazor without additional services. Also, it's important to commit and push any changes you make to your Blazor app to the GitHub repository to update the live site.
+
+# There is a GitHub specific issue where static site folders beginning with an underscore are ignored
+for Blazor Wasm application, _framework and _content are used.
+
+To work around this issue, create a .nojekyll file in the root of the project
+
+https://github.com/orgs/community/discussions/61073
