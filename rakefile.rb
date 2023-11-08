@@ -4,10 +4,13 @@ require "raykit"
 # https://<username>.github.io/<repository-name>/
 # https://lou-parslow.github.io/Hello.Blazor.Wasm/
 
+# failed to load resource https://lou-parslow.github.io/Hello.Blazor.Wasm/_framework/blazor.webassembly.js
+
 task :setup do
   run "dotnet new blazorwasm -o src/Hello.Blazor.Wasm -n Hello.Blazor.Wasm" unless Dir.exist? "src/Hello.Blazor.Wasm"
 
   # set base path to /Hello.Blazor.Wasm in src/Hello.Blazor.Wasm/www/index.html
+  # https://lou-parslow.github.io/Hello.Blazor.Wasm/
 end
 
 task :build do
