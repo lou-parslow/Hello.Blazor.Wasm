@@ -1,12 +1,22 @@
 ﻿@page "/"
+@using Microsoft.Fast.Components.FluentUI
 
 <PageTitle>Hello.Blazor.Wasm</PageTitle>
+<FluentHeader>
+    Hello.Blazor.Wasm
+</FluentHeader>
 
-<h1>Hello, Blazor Wasm</h1>
+<FluentBodyContent>
+    This is a <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-7.0#blazor-webassembly">Blazor Web Assembly</a> web application, that is published as a static website to <a href="https://pages.github.com/">GitHub Pages</a>.
+</FluentBodyContent>
 
-This is a <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-7.0#blazor-webassembly">Blazor Web Assembly</a> web application, that is published as a static website to <a href="https://pages.github.com/">GitHub Pages</a>.
+<br/>
+<h3>to publish this application as a static website</h3>
+<p><code>dotnet publish src/Hello.Blazor.Wasm/Hello.Blazor.Wasm.csproj -c Release -o dist</code></p>
+<p>this places the static website file into /dist/wwwroot, the contents of that file will be copied to /docs, where GitHub will be instructed to look for the static files to be published</p>
 
-<p>GitHub Pages Settings</p>
+
+<h2>GitHub Pages Settings</h2>
 <img src="./GitHub.Pages.Settings.jpg" alt="My Image">
 
 <p>These settings will trigger the files in the /docs folder to be published as a GitHub Pages web site whenever changes are detected on the main branch</p>
