@@ -30,3 +30,6 @@ task :build do
   #<base href="/" />
   #<base href="https://lou-parslow.github.io/Hello.Blazor.Wasm/" />
 end
+
+task :default => [:build,:integrate,:push] do
+end
