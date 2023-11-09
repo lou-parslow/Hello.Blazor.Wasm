@@ -1,0 +1,22 @@
+{
+  {
+    "name": "GitHub",
+    "url": "https://github.com/",
+    "tags": "source code management cloud"
+  },
+  {
+    "name": "GitLab",
+    "url": "https://gitlab.com/",
+    "tags": "source code management cloud"
+  },
+  {
+    "name": "Google",
+    "url": "https://google.com/",
+    "tags": "search engine"
+  },
+  {
+    "name": "NuGet",
+    "url": "https://nuget.org/",
+    "tags": "package manager dotnet"
+  }
+}
