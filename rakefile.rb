@@ -6,6 +6,7 @@ require "raykit"
 SITE_DIR="artifacts/Hello.Blazor.Wasm.#{VERSION}"
 
 task :build do
+ FileUtils.cp("README.md","src/Hello.Blazor.Wasm/wwwroot/")
   run "dotnet publish src/Hello.Blazor.Wasm/Hello.Blazor.Wasm.csproj -c Release -o dist"
 
   FileUtils.mkdir("artifacts") unless Dir.exist? "artifacts"
