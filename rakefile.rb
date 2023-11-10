@@ -8,6 +8,7 @@ task :build do
 
   FileUtils.mkdir("artifacts") unless Dir.exist? "artifacts"
   FileUtils.mkdir(PUBLISH_DIR) unless Dir.exist? PUBLISH_DIR
+  puts "  copying files to #{PUBLISH_DIR}"
   FileUtils.cp_r "dist/wwwroot/.", PUBLISH_DIR
   # for github pages, a .nojekyll file is required to prevent github from ignoring files starting with an underscore
   File.open("#{PUBLISH_DIR}/.nojekyll", "w") { }
