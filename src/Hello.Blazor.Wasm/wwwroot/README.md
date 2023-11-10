@@ -12,8 +12,8 @@ Steps to manually deploy a Blazor WASM application to GitHub pages
 
 
 **Copy the contents of the published wwwfolder to the github pages folder:**
-   - Copy the contents of the 'dist\wwwroot' folder to the 'docs' folder
-   - Create an empty file 'docs\.nojekyll' to signal to github pages that folders name with a leading underscore (_framework,_content) should be allowed
+   - Copy the contents of the **'dist\wwwroot'** folder to the **'docs'** folder
+   - Create an empty file 'docs\.nojekyll' to signal to github pages that folders name with a leading underscore (**_framework**,**_content**) should be allowed
    - Edit the 'docs\index.html' file and change the base href to '/Hello.Blazor.Wasm/'
 
 
