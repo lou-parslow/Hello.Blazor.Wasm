@@ -2,6 +2,34 @@
 
 A Blazor WASM application deployed to GitHub pages
 
+
+1. **Build Your Blazor WASM Application for Release:**
+   - Open your terminal or command prompt.
+   - Navigate to your project directory.
+   - Run `dotnet publish -c Release` to compile your application in release mode.
+
+2. **Set the Base Path:**
+   - Open the `wwwroot/index.html` file in your Blazor project.
+   - Find the `<base href="/" />` tag.
+   - Change the `href` value to `"/<repository-name>/"`, where `<repository-name>` is the name of your GitHub repository.
+
+3. **Create a GitHub Repository:**
+   - Go to GitHub and create a new repository.
+
+4. **Initialize Your Local Repository and Connect it to GitHub:**
+   - Inside your project folder, initialize a new git repository with `git init`.
+   - Add the GitHub remote with `git remote add origin https://github.com/<username>/<repository-name>.git`, replacing `<username>` and `<repository-name>` with your GitHub username and new repository name.
+
+5. **Checkout to a New Branch (optional for project pages):**
+   - If you want to keep your source separate from the deployment, create a `gh-pages` branch with `git checkout -b gh-pages`.
+
+6. **Push the Publish Folder to GitHub:**
+   - Copy the contents of the `bin/Release/netstandard2.1/publish/wwwroot` folder (the path might be slightly different depending on your .NET version) to the root of your local git repository.
+   - Add the files to git with `git add -A`.
+   - Commit the changes with `git commit -m "Deploy Blazor app to GitHub Pages"`.
+   - Push to GitHub with `git push -u origin gh-pages` (or `git push -u origin main` if you are using the main branch for a user or organization site).
+
+
 # Future considerations
 - [ ] deploy to GitLab pages
 - [ ] deploy to IIS
