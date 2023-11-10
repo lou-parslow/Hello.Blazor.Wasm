@@ -2,6 +2,9 @@
 
 <PageTitle>Hello.Blazor.Wasm</PageTitle>
 
+<span>markdown</span>
+<div>@MarkupString</div>
+
 <FluentBodyContent>
     This is a <a href="https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-7.0#blazor-webassembly">Blazor Web Assembly</a> web application, that is published as a static website to <a href="https://pages.github.com/">GitHub Pages</a>.
 </FluentBodyContent>
@@ -16,3 +19,13 @@
 <img src="./GitHub.Pages.Settings.jpg" alt="My Image">
 
 <p>These settings will trigger the files in the /docs folder to be published as a GitHub Pages web site whenever changes are detected on the main branch</p>
+
+
+
+
+@code {
+	public string MarkdownText { get; set; } = "# Hello World=======================";
+
+	private MarkupString MarkupString => (MarkupString)Content;
+	private string Content => Markdig.Markdown.ToHtml(MarkdownText);
+}
