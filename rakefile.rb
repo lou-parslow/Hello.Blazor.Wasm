@@ -3,11 +3,13 @@ VERSION="0.0.0"
 
 require "raykit"
 
+SITE_DIR="artifacts/Hello.Blazor.Wasm.#{VERSION}"
+
 task :build do
   run "dotnet publish src/Hello.Blazor.Wasm/Hello.Blazor.Wasm.csproj -c Release -o dist"
 
   FileUtils.mkdir("artifacts") unless Dir.exist? "artifacts"
-  SITE_DIR="artifacts/Hello.Blazor.Wasm.#{VERSION}"
+  
   FileUtils.mkdir(SITE_DIR) unless Dir.exist? SITE_DIR
   puts "  copying files to #{SITE_DIR}"
   FileUtils.cp_r "dist/wwwroot/.", SITE_DIR
@@ -18,7 +20,6 @@ end
 
 task :update_docs => [:build] do
   mkdir "docs" unless Dir.exist? "docs"
-  SITE_DIR="artifacts/Hello.Blazor.Wasm.#{VERSION}"
   FileUtils.cp_r "#{SITE_DIR}/.", "docs"
   # for github pages, a .nojekyll file is required to prevent github from ignoring files starting with an underscore
   #File.open("docs/.nojekyll", "w") { }
