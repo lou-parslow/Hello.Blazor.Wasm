@@ -22,15 +22,6 @@ jobs:
     - name: Build
       run: dotnet publish src/Hello.Blazor.Wasm/Hello.Blazor.Wasm.csproj -c Release -o dist
 
-    # Deploy to GitHub Pages
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.4
-      with:
-        branch: docs  # The branch the action should deploy to.
-        folder: dist/wwwroot # The folder the action should deploy.
-        clean: true # Automatically remove deleted files from the deployment branch
-        single-commit: true # Keeps the deployment history clean
-
     # Post-processing steps (if needed)
     - name: Additional Steps
       run: |
