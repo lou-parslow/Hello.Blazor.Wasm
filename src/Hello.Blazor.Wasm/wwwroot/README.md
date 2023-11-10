@@ -26,6 +26,6 @@ Steps to manually deploy a Blazor WASM application to GitHub pages
 **Enable GitHub Pages in Your Repository Settings:**
    - Go to your repository on GitHub.
    - Click on "Settings" and navigate to "Pages" on the sidebar.
-   - Under "Source", select the branch you want to deploy, in this case, the branch ***`main`*** is used.
+   - Under "Source", select the branch you want to deploy, in this case, the branch ***main*** is used.
    - Click "Save", and GitHub will start to build your site.
 
