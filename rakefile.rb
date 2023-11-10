@@ -23,5 +23,5 @@ task :update_docs => [:build] do
   FileUtils.cp_r "#{SITE_DIR}/.", "docs"
 end
 
-task :default => [:build, :integrate, :push] do
+task :default => [:build,:update_docs, :integrate, :push] do
 end
