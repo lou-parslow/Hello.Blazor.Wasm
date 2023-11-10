@@ -1,14 +1,11 @@
 # this project may be viewed here: https://lou-parslow.github.io/Hello.Blazor.Wasm/
 VERSION="0.0.0"
-
 require "raykit"
-
 SITE_DIR="artifacts/Hello.Blazor.Wasm.#{VERSION}"
 
 task :build do
  FileUtils.cp("README.md","src/Hello.Blazor.Wasm/wwwroot/")
   run "dotnet publish src/Hello.Blazor.Wasm/Hello.Blazor.Wasm.csproj -c Release -o dist"
-
   FileUtils.mkdir("artifacts") unless Dir.exist? "artifacts"
   FileUtils.mkdir(SITE_DIR) unless Dir.exist? SITE_DIR
   puts "  copying files to #{SITE_DIR}"
