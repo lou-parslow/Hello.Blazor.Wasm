@@ -9,7 +9,6 @@ task :build do
   run "dotnet publish src/Hello.Blazor.Wasm/Hello.Blazor.Wasm.csproj -c Release -o dist"
 
   FileUtils.mkdir("artifacts") unless Dir.exist? "artifacts"
-  
   FileUtils.mkdir(SITE_DIR) unless Dir.exist? SITE_DIR
   puts "  copying files to #{SITE_DIR}"
   FileUtils.cp_r "dist/wwwroot/.", SITE_DIR
