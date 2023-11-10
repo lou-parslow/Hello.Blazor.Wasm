@@ -1,6 +1,7 @@
 # Hello.Blazor.Wasm
 
 This is [Blazor Web Assembly](https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-7.0#blazor-webassembly) application, that is deployed as a static [website](https://lou-parslow.github.io/Hello.Blazor.Wasm/) to [GitHub Pages](https://pages.github.com/)
+The purpose of this project is to provide a simple working example of a Blazor Web Assembly hosted using GitHub Pages. The source code may be found [here](https://github.com/lou-parslow/Hello.Blazor.Wasm.git).
 
 Steps to manually deploy a Blazor WASM application to GitHub pages
 
