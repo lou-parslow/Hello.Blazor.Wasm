@@ -1,9 +1,9 @@
 {
   "entryAssembly": "Hello.Blazor.Wasm",
   "resources": {
-    "hash": "sha256-kU70eioJjMGXn4VgTSFDswoHjrPZqBQZzB1GQkYwJbM=",
+    "hash": "sha256-Tnu52DvL113JCGVeoMQHF5T/gWgwgOv2PVp0lnQEk4s=",
     "runtime": {
-      "dotnet.7.0.14.w8s8wumxjc.js": "sha256-YWGUknGRzP/fgO6YjvCJKPVQNZAPEd6ll+rHfQEIW+I=",
+      "dotnet.7.0.14.o5ddmwdqf7.js": "sha256-YWGUknGRzP/fgO6YjvCJKPVQNZAPEd6ll+rHfQEIW+I=",
       "dotnet.timezones.blat": "sha256-t5xviiOQTfAsF0UDhmcyalKiaehUmf/sqJl97tmPM0M=",
       "dotnet.wasm": "sha256-Oyo/i3KkRvFfEKDQqn9DjK1HWx19Z6eCVCNsUFQPSJU=",
       "icudt_CJK.dat": "sha256-SZLtQnRc0JkwqHab0VUVP7T3uBPSeYzxzDnpxPpUnHk=",
@@ -11,7 +11,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "Hello.Blazor.Wasm.dll": "sha256-3cZrTL08iJJUOvWwrnjS8MgIpX+7dcd3/guBt0ew+ZI=",
+      "Hello.Blazor.Wasm.dll": "sha256-x26xT0uVWS4wIOCP+QZUdkR8+LkzpPIoPF+s/g09p4o=",
       "Markdig.dll": "sha256-/zBLNTAFSwzmj9Qq3hOzX4jN+IzlZOPHCL3qEU4t8BQ=",
       "Microsoft.AspNetCore.Components.dll": "sha256-rhcyJcNSmHA6XdC5v9aocWdBU6ZPGduewSUpcgJMLXc=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-NXNSPYU7em1AlAnFJ8AJeeltog5RTwLt+SdhtVVCtqA=",
@@ -25,7 +25,7 @@
       "Microsoft.Extensions.Logging.dll": "sha256-RJE660TEC1wm3MyL1EXQfTQB1qK+JWy1efVUxI8nNUo=",
       "Microsoft.Extensions.Options.dll": "sha256-WPBQk7rt2p4aMEo2pTp1sBpsiWdE8MmWuIYq+zl1ceo=",
       "Microsoft.Extensions.Primitives.dll": "sha256-eXvGx2jcjpTPEJoAHBsW/VuMPbNyyU+AsuhPmkzSSRY=",
-      "Microsoft.Fast.Components.FluentUI.dll": "sha256-RMmJAfQLEZ+YAZADlyIICt1IDcb0hm4SeDWoDv76nf0=",
+      "Microsoft.Fast.Components.FluentUI.dll": "sha256-3Vktmyj58lSuk0t4LEdli5zAY+rUPPyBPLEr+8kKG/0=",
       "Microsoft.JSInterop.dll": "sha256-LjdcbA3WtwWbYygJWgc8vq7aPGsrvix13ESpNicMyYY=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-4cMfifCYL/bv5qiC8T6HyABhOewZlTXovRc+E/CrUbc=",
       "System.Collections.Concurrent.dll": "sha256-VZnfrGxYX96nQfEjyo0LykMRJsMxKFSuuLS2J4NRr1o=",
