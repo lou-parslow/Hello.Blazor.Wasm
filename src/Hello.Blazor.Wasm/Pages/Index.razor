@@ -1,7 +1,27 @@
 ﻿@page "/"
 @inject HttpClient Http
+@inject NavigationManager NavigationManager
 
 <PageTitle>Hello.Blazor.Wasm</PageTitle>
+
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@using Microsoft.AspNetCore.Components.Authorization
+
+<AuthorizeView>
+    <Authorized>
+        <button @onclick="BeginLogout">Logout</button>
+    </Authorized>
+    <NotAuthorized>
+        <button @onclick="BeginLogin">Login</button>
+    </NotAuthorized>
+</AuthorizeView>
+
+@code {
+    private void BeginLogin() => NavigationManager.NavigateTo("authentication/login");
+    private void BeginLogout() => NavigationManager.NavigateTo("authentication/logout");
+}
+
 <div>@MarkupString</div>
 
 @code {
