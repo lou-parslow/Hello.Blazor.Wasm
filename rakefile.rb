@@ -7,6 +7,7 @@ SITE_DIR = "artifacts/Hello.Blazor.Wasm.#{VERSION}"
 
 task :setup do
   run "dotnet add src/Hello.Blazor.Wasm/Hello.Blazor.Wasm.csproj package Microsoft.Extensions.DependencyInjection"
+  run "dotnet add src/Hello.Blazor.Wasm/Hello.Blazor.Wasm.csproj package Microsoft.AspNetCore.Components.WebAssembly.Authentication"
 end
 
 task :build do
