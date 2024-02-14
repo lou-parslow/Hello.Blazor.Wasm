@@ -10,6 +10,7 @@ builder.RootComponents.Add<HeadOutlet>("head::after");
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+/*
 // Configure authentication
 builder.Services.AddOidcAuthentication(options =>
 {
@@ -23,6 +24,6 @@ builder.Services.AddOidcAuthentication(options =>
     //options.ProviderOptions.DefaultAccessTokenScopes.Add("openid");
     //options.ProviderOptions.DefaultAccessTokenScopes.Add("profile");
     //options.ProviderOptions.DefaultAccessTokenScopes.Add("email");
-});
+});*/
 
 await builder.Build().RunAsync();
