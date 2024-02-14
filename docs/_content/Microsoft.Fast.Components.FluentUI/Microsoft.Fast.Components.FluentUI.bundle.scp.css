@@ -103,18 +103,18 @@ fluent-data-grid[b-rcbc18ov7b] {
     --col-gap: 1rem;
 }
 
-[b-rcbc18ov7b] .empty-content-row {
+[b-rcbc18ov7b] .empty-content-row,
+[b-rcbc18ov7b] .loading-content-row {
     width: 100%;
-    height: 100%;
+    height: 100% !important ;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-[b-rcbc18ov7b] .empty-content-cell {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+[b-rcbc18ov7b] .empty-content-cell, 
+[b-rcbc18ov7b] .loading-content-cell {
+
     font-weight: 600;
 }
 
@@ -131,7 +131,6 @@ fluent-data-grid[b-rcbc18ov7b] {
 
 [dir=rtl] .col-options[b-rcbc18ov7b] {
     left: unset;
-    
 }
 
 .col-justify-end .col-options[b-rcbc18ov7b], .col-justify-right .col-options[b-rcbc18ov7b] {
@@ -160,10 +159,9 @@ fluent-data-grid[b-rcbc18ov7b] {
     cursor: col-resize;
 }
 
-    .col-width-draghandle:hover[b-rcbc18ov7b], .col-width-draghandle:active[b-rcbc18ov7b] {
-        background: var(--neutral-stroke-divider-rest);
-    }
-
+.col-width-draghandle:hover[b-rcbc18ov7b], .col-width-draghandle:active[b-rcbc18ov7b] {
+    background: var(--neutral-stroke-divider-rest);
+}
 /* _content/Microsoft.Fast.Components.FluentUI/Components/DataGrid/FluentDataGridCell.razor.rz.scp.css */
 fluent-data-grid-cell[b-58jkn3no8z] {
     text-overflow: ellipsis;
@@ -474,14 +472,12 @@ fluent-data-grid-cell[b-58jkn3no8z] {
 fluent-dialog[b-nhhazhtmim]::part(control) {
     --dialog-padding: calc(var(--design-unit) * 6 * 1px);
     position: relative;
-    padding: 0px var(--dialog-padding);
+    padding: var(--dialog-padding);
     width: calc(var(--dialog-width) - 2 * var(--dialog-padding));
     height: calc(var(--dialog-height) - 2 * var(--dialog-padding));
-    max-width: 80%;
 }
 
 fluent-dialog:has(div[class~="fluent-dialog-body"]):not(:is(fluent-dialog[class~="right"], fluent-dialog[class~="left"]) )[b-nhhazhtmim]::part(control) {
-    height: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
@@ -498,12 +494,11 @@ fluent-dialog[class~="left"][b-nhhazhtmim]::part(control) {
     border-radius: unset;
     border-width: 0;
     --dialog-height: 100dvh;
-    height: 100dvh;
 }
 
 :is(fluent-dialog[class~="right"], fluent-dialog[class~="left"])[b-nhhazhtmim]  .fluent-dialog-body {
     flex-grow: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 fluent-dialog[class~="right"][b-nhhazhtmim]::part(control) {
@@ -519,16 +514,13 @@ fluent-dialog[class~="left"][b-nhhazhtmim]::part(control) {
 
 fluent-dialog[b-nhhazhtmim]  .fluent-dialog-header {
     grid-area: dialog-header;
-    padding: var(--dialog-padding) 0px;
-    width: 100%;
+    padding: 0 0 var(--dialog-padding) 0;
 }
 
 fluent-dialog[b-nhhazhtmim]  .fluent-dialog-footer {
     grid-area: dialog-footer;
     margin-top: auto;
-    padding: var(--dialog-padding) 0px;
-    bottom: 0px;
-    width: calc(100% - var(--dialog-padding) * 1px);
+    padding: var(--dialog-padding) 0 0 0;
 }
 
 fluent-dialog:has(div[class~="fluent-dialog-body"])[b-nhhazhtmim]  .fluent-dialog-footer {
@@ -543,11 +535,6 @@ fluent-dialog[b-nhhazhtmim]  .fluent-dialog-body {
     width: 100%;
     height: auto;
     min-height: 80px;
-}
-
-fluent-dialog:has(:not(div[class~="fluent-dialog-header"]))[b-nhhazhtmim]
-{
-    padding: var(--dialog-padding) 0px 0px 0px;
 }
 /* _content/Microsoft.Fast.Components.FluentUI/Components/Drag/FluentDropZone.razor.rz.scp.css */
 div[draggable='true'][b-9aejvkglh2] {
@@ -570,6 +557,14 @@ div[dragged-over][b-9aejvkglh2] {
     font-weight: normal;
     font-size: var(--type-ramp-minus-1-font-size);
     line-height: var(--type-ramp-minus-1-line-height);
+}
+/* _content/Microsoft.Fast.Components.FluentUI/Components/Forms/FluentValidationMessage.razor.rz.scp.css */
+.validation-message[b-ffwfgbwifi] {
+    color: var(--error);
+    font-size: var(--type-ramp-minus-1-font-size);
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
 }
 /* _content/Microsoft.Fast.Components.FluentUI/Components/Grid/FluentGrid.razor.rz.scp.css */
 .fluent-grid[b-ljlkesaj3r] {
@@ -1239,6 +1234,44 @@ div[dragged-over][b-9aejvkglh2] {
         flex-basis: 1003%;
     }
 }
+
+/* Hidden */
+
+@media (max-width: 599px) {
+    .fluent-grid[b-ljlkesaj3r]  > div[hidden-when~="xs"] {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+    .fluent-grid[b-ljlkesaj3r]  > div[hidden-when~="sm"] {
+        display: none;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1279px) {
+    .fluent-grid[b-ljlkesaj3r]  > div[hidden-when~="md"] {
+        display: none;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1919px) {
+    .fluent-grid[b-ljlkesaj3r]  > div[hidden-when~="lg"] {
+        display: none;
+    }
+}
+
+@media (min-width: 1920px) and (max-width: 2559px) {
+    .fluent-grid[b-ljlkesaj3r]  > div[hidden-when~="xl"] {
+        display: none;
+    }
+}
+
+@media (min-width: 2560px) {
+    .fluent-grid[b-ljlkesaj3r]  > div[hidden-when~="xxl"] {
+        display: none;
+    }
+}
 /* _content/Microsoft.Fast.Components.FluentUI/Components/Header/FluentHeader.razor.rz.scp.css */
 .header[b-y704zuwgsz] {
     display: flex;
@@ -1298,13 +1331,19 @@ div[dragged-over][b-9aejvkglh2] {
         cursor: pointer;
     }
 
-    .fluent-inputfile-container .progress[b-9dy2gtn5te] {
+    .fluent-inputfile-container .inputfile-progress[b-9dy2gtn5te] {
         padding-top: 20px;
         height: 50px;
         margin: 0px 15%;
         text-align: center;
         line-height: 8px;
         font-size: var(--type-ramp-minus-2-font-size);
+    }
+
+    .fluent-inputfile-container[disabled][b-9dy2gtn5te], .fluent-inputfile-container[disabled="true"][b-9dy2gtn5te] {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: not-allowed;
     }
 /* _content/Microsoft.Fast.Components.FluentUI/Components/Label/FluentInputLabel.razor.rz.scp.css */
 .fluent-input-label[b-ijcaj0p60b] {
@@ -1806,7 +1845,6 @@ div[dragged-over][b-9aejvkglh2] {
 }
 
 [b-5zjpev3f1l] .fluent-nav-icon {
-    margin-inline-end: calc(var(--design-unit) * 2px + 2px);
     min-width: 20px;
 }
 
@@ -1866,7 +1904,7 @@ div[dragged-over][b-9aejvkglh2] {
 }
 
 [b-95x3e3vb5e] .fluent-nav-icon {
-    margin-inline-end: calc(var(--design-unit) * 2px + 2px);
+    
     min-width: 20px;
 }
 
@@ -1883,12 +1921,12 @@ div[dragged-over][b-9aejvkglh2] {
 /* _content/Microsoft.Fast.Components.FluentUI/Components/NavMenu/FluentNavMenu.razor.rz.scp.css */
 /*  NavMenu */
 .fluent-nav-menu[b-dpnvrc1pyz] {
-    flex-direction: column;
-    align-items: stretch;
+    padding: 0 2px;
+    
 }
 
 [b-dpnvrc1pyz] .fluent-nav-item {
-    margin: calc(var(--design-unit) * 1px + 1px) 0;
+    margin: calc(var(--design-unit) * 1px) 0;
     -webkit-user-select: none;
     user-select: none;
 }
@@ -1896,10 +1934,6 @@ div[dragged-over][b-9aejvkglh2] {
     /* Hover and active highlighting */
     [b-dpnvrc1pyz] .fluent-nav-item .positioning-region:hover:not(:has(.disabled)) {
         cursor: pointer;
-        background: var(--neutral-fill-secondary-rest);
-    }
-
-    [b-dpnvrc1pyz] .fluent-nav-item a.active {
         background: var(--neutral-fill-secondary-rest);
     }
 
@@ -1943,7 +1977,7 @@ div[dragged-over][b-9aejvkglh2] {
 }
 
 [b-dpnvrc1pyz] .fluent-nav-group .fluent-nav-item:last-of-type, .fluent-nav-menu .fluent-nav-item:last-of-type[b-dpnvrc1pyz] {
-    margin-bottom: 0;
+    margin-bottom: 2px;
 }
 
 /* level indenting */
@@ -1964,6 +1998,7 @@ div[dragged-over][b-9aejvkglh2] {
 }
 
 [b-dpnvrc1pyz] .fluent-nav-text {
+    margin-inline-start: calc(var(--design-unit) * 2px + 2px);
     overflow: hidden;
     text-overflow: ellipsis;
     width: calc(100% - 70px);
@@ -2044,12 +2079,13 @@ div[dragged-over][b-9aejvkglh2] {
 }
 
     
-
+[dir="rtl"] *[b-ni865qjjdp]  fluent-button > svg {
+    transform: rotate(180deg);
+}
 /* _content/Microsoft.Fast.Components.FluentUI/Components/Popover/FluentPopover.razor.rz.scp.css */
 .fluent-popover-content[b-hf87bjat5r]  {
     font-family: var(--body-font);
     -webkit-font-smoothing: antialiased;
-    color: rgb(50, 49, 48);
     line-height: 27px;
     overflow-wrap: break-word;
     word-break: break-word;

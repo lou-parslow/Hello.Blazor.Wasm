@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{1D52
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{7644F078-4B91-435A-820F-F8A3FC8859C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp1", "BlazorApp1\BlazorApp1.csproj", "{7BD3C53C-3931-441C-94AA-D00CC89B6133}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{851F2D67-6CD3-41F1-85D0-3E44663ED89B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{851F2D67-6CD3-41F1-85D0-3E44663ED89B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{851F2D67-6CD3-41F1-85D0-3E44663ED89B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD3C53C-3931-441C-94AA-D00CC89B6133}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD3C53C-3931-441C-94AA-D00CC89B6133}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD3C53C-3931-441C-94AA-D00CC89B6133}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD3C53C-3931-441C-94AA-D00CC89B6133}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

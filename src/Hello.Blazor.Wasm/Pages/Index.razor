@@ -16,8 +16,8 @@
     <NotAuthorized>
         <button @onclick="BeginLogin">Login</button>
     </NotAuthorized>
-</AuthorizeView>
--->
+</AuthorizeView>-->
+
 @code {
     private void BeginLogin() => NavigationManager.NavigateTo("authentication/login");
     private void BeginLogout() => NavigationManager.NavigateTo("authentication/logout");

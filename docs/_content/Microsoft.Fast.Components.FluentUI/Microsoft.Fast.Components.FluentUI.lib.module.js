@@ -18,8 +18,18 @@ export function afterStarted(blazor) {
     blazor.registerCustomEventType('checkedchange', {
         browserEventName: 'change',
         createEventArgs: event => {
+
+            // Hacking of a fake update
+            if (event.target.isUpdating) {                
+                return {
+                    checked: null,
+                    indeterminate: null
+                }
+            }
+
             return {
-                checked: event.target.currentChecked
+                checked: event.target.currentChecked,
+                indeterminate: event.target.indeterminate
             };
         }
     });
@@ -148,18 +158,24 @@ export function afterStarted(blazor) {
             };
         }
     });
-    blazor.registerCustomEventType('sizechanged', {
-        browserEventName: 'sizechanged',
+    blazor.registerCustomEventType('splitterresized', {
         createEventArgs: event => {
-            return event;
+            return {
+                panel1size: event.detail.panel1size,
+                panel2size: event.detail.panel2size
+            }
+        }
+    });
+    blazor.registerCustomEventType('splittercollapsed', {
+        createEventArgs: event => {
+            return {
+                collapsed: event.detail.collapsed
+            }
         }
     });
 }
 
 export function beforeStart(options, extensions) {
-    var defaultBaseLayerLuminance = window.matchMedia("(prefers-color-scheme: dark)").matches ? 0.23 : 1.0;
-    window['DefaultBaseLayerLuminance'] = defaultBaseLayerLuminance;
-
     var wcScript = document.createElement('script');
     wcScript.type = 'module';
     wcScript.src = './_content/Microsoft.Fast.Components.FluentUI/js/web-components-v2.5.16.min.js';
