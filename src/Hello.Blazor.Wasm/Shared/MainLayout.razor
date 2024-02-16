@@ -1,12 +1,25 @@
 ﻿@inherits LayoutComponentBase
+@inject IJSRuntime JSRuntime
 
 <div class="page">
     <main>
         <FluentHeader>
             Hello.Blazor.Wasm
         </FluentHeader>
+		<FluentToolbar>
+			<FluentSwitch Label="Theme" OnChange="@(async (bool value) => await ToggleTheme())" />
+		</FluentToolbar>
         <article class="content px-4">
             @Body
         </article>
     </main>
 </div>
+
+@code {
+	private bool isDarkTheme = false;
+	private async Task ToggleTheme()
+	{
+		isDarkTheme = !isDarkTheme;
+		await JSRuntime.InvokeVoidAsync("changeTheme", isDarkTheme);
+	}
+}
